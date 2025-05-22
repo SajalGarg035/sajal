@@ -1,0 +1,23 @@
+name: Push Test Workflow
+
+on:
+  push:
+    branches:
+      - main  # or 'master', depending on your repo
+
+jobs:
+  test-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Print file list
+        run: ls -la
+
+      - name: Show current branch
+        run: git branch
+
+      - name: Print success message
+        run: echo "✅ Push and workflow test successful!"
